@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Importar cors
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use(cors()); // Usar cors
 
 // JSON-RPC handler
 app.post('/rpc', (req, res) => {
